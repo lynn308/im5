@@ -2367,6 +2367,218 @@
 
 
 /* ========================================
+   CONTACT PAGE
+======================================== */
+
+.contact-page {
+    width: 100%;
+    min-height: 380px;
+
+    background-color: #faf8f2;
+    color: #1a1a1a;
+
+    padding: 80px 20px 110px;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.contact-page__container {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ========================================
+   KLEINE ÜBERSCHRIFT
+======================================== */
+
+.contact-page__eyebrow {
+    margin: 0 0 12px;
+
+    color: #2922cd;
+
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+
+    line-height: 1.2;
+}
+
+
+/* ========================================
+   HAUPTTITEL
+======================================== */
+
+.contact-page__title {
+    margin: 0 0 15px;
+
+    color: #1a1a1a;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 6vw, 70px);
+    font-weight: 700;
+
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+
+/* ========================================
+   E-MAIL
+======================================== */
+
+.contact-page__email {
+    margin: 0;
+
+    color: #333333;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+.contact-page__email a {
+    color: inherit;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.contact-page__email a:hover {
+    color: #2922cd;
+    text-decoration: underline;
+}
+
+.contact-page__email a:focus-visible {
+    outline: 3px solid #2922cd;
+    outline-offset: 4px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .contact-page {
+        min-height: 340px;
+        padding: 75px 25px 90px;
+    }
+
+    .contact-page__title {
+        font-size: 58px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .contact-page {
+        min-height: 300px;
+        padding: 65px 20px 75px;
+    }
+
+    .contact-page__eyebrow {
+        font-size: 17px;
+    }
+
+    .contact-page__title {
+        font-size: 48px;
+    }
+
+    .contact-page__email {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+}
+
+/* ========================================
+   WEISSEN ABSTAND UNTER FOOTER ENTFERNEN
+======================================== */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+/* Grundlayout */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+/* Kontaktseite */
+
+body:has(.contact-page) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #faf8f2;
+}
+
+/* Hauptbereich */
+
+body:has(.contact-page) main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Kontaktmodul füllt den freien Platz */
+
+body:has(.contact-page) .contact-page {
+    flex: 1;
+    min-height: 380px;
+    background-color: #faf8f2;
+}
+
+/* Footer bleibt unten */
+
+body:has(.contact-page) [data-layout="footer"] {
+    flex-shrink: 0;
+    margin: 0;
+}
+/* Footer */
+
+[data-layout="footer"] {
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+/* Kein Abstand nach dem letzten Element */
+
+[data-layout="footer"] > :last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
    RESPONSIVE
 ======================================== */
 

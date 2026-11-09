@@ -190,6 +190,26 @@ Container::make('post_meta', 'Module')
                     ->set_layout('tabbed-vertical'),
             ])
 
+
+            // ========================================
+            // CONTACT PAGE
+            // ========================================
+
+            ->add_fields('contact_page', 'Kontaktseite', [
+
+                Field::make('text', 'eyebrow', 'Kleine Überschrift')
+                    ->set_default_value('sag hallo!'),
+
+                Field::make('text', 'title', 'Haupttitel')
+                    ->set_default_value('Kontakt')
+                    ->set_required(),
+
+                Field::make('text', 'email', 'E-Mail-Adresse')
+                    ->set_attribute('type', 'email')
+                    ->set_required(),
+
+            ])
+
             // ========================================
             // SETTINGS DES ÄUSSEREN MODULBAUKASTENS
             // ========================================
