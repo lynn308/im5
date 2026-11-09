@@ -1914,6 +1914,457 @@
 
 }
 
+/* Beschreibung für den wiederverwendbaren Hero */
+
+.about-hero__description {
+    max-width: 480px;
+    margin: 0 auto 25px;
+
+    color: #faf8f2;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   PROJECTS OVERVIEW
+======================================== */
+
+.projects-overview {
+    width: 100%;
+    background-color: #faf8f2;
+
+    padding: 55px 25px 85px;
+
+    color: #1a1a1a;
+}
+
+.projects-overview *,
+.projects-overview *::before,
+.projects-overview *::after {
+    box-sizing: border-box;
+}
+
+.projects-overview__container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   ÜBERSCHRIFT
+======================================== */
+
+.projects-overview__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 25px;
+    margin-bottom: 24px;
+}
+
+.projects-overview__heading-group {
+    min-width: 0;
+}
+
+.projects-overview__eyebrow {
+    margin: 0 0 8px;
+
+    color: #2922cd;
+
+    font-family: cursive;
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.projects-overview__title {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 700;
+
+    line-height: 1.1;
+    color: #1a1a1a;
+}
+
+.projects-overview__count {
+    margin: 0 0 5px;
+
+    color: #777777;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   KATEGORIEN FILTER
+======================================== */
+
+.projects-overview__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.projects-overview__filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+    padding: 7px 17px;
+
+    border: 1.5px solid #1a1a1a;
+    border-radius: 100px;
+
+    background-color: transparent;
+    color: #1a1a1a;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1.2;
+    cursor: pointer;
+
+    transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            border-color 0.2s ease;
+}
+
+.projects-overview__filter:hover {
+    background-color: #e7d9f5;
+}
+
+.projects-overview__filter.is-active,
+.projects-overview__filter[aria-pressed="true"] {
+    background-color: #2922cd;
+    border-color: #2922cd;
+    color: #ffffff;
+}
+
+.projects-overview__filter:focus-visible {
+    outline: 3px solid #2922cd;
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   PROJEKTE GRID
+======================================== */
+
+.projects-overview__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+    align-items: stretch;
+}
+
+
+/* ========================================
+   PROJEKTKARTEN
+======================================== */
+
+.projects-overview__card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    border: 1.5px solid #1a1a1a;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background-color: #faf8f2;
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+.projects-overview__card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+            0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+/* Für den Kategorienfilter */
+
+.projects-overview__card[hidden] {
+    display: none !important;
+}
+
+
+/* ========================================
+   PROJEKTBILDER
+======================================== */
+
+.projects-overview__visual {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1.25 / 1;
+
+    overflow: hidden;
+    flex-shrink: 0;
+
+    background-color: #e7d9f5;
+}
+
+.projects-overview__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.3s ease;
+}
+
+.projects-overview__card:hover .projects-overview__image {
+    transform: scale(1.04);
+}
+
+/* Platzhalter */
+
+.projects-overview__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+            repeating-linear-gradient(
+                    45deg,
+                    #eadff7 0,
+                    #eadff7 10px,
+                    #e6d9f5 10px,
+                    #e6d9f5 20px
+            );
+
+    color: #6c5d81;
+
+    font-family: cursive;
+    font-style: italic;
+    font-size: 18px;
+}
+
+
+/* ========================================
+   PROJEKTINFORMATIONEN
+======================================== */
+
+.projects-overview__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    flex: 1;
+
+    width: 100%;
+    min-height: 170px;
+
+    padding: 17px 17px 18px;
+
+    background-color: #faf8f2;
+}
+
+/* Projektname */
+
+.projects-overview__name {
+    margin: 0 0 9px;
+
+    color: #1a1a1a;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+}
+
+/* Beschreibung */
+
+.projects-overview__description {
+    margin: 0 0 14px;
+
+    color: #333333;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Kategorien */
+
+.projects-overview__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: auto;
+    margin-bottom: 14px;
+}
+
+.projects-overview__category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 11px;
+
+    border-radius: 100px;
+
+    background-color: #ddf18a;
+    color: #1a1a1a;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Projekt ansehen */
+
+.projects-overview__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+    width: 100%;
+
+    color: #2922cd;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.projects-overview__link:hover {
+    text-decoration: underline;
+}
+
+.projects-overview__link span:last-child {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.projects-overview__link:focus-visible {
+    outline: 3px solid #2922cd;
+    outline-offset: 3px;
+}
+
+.projects-overview__empty {
+    margin: 25px 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.projects-overview__empty[hidden] {
+    display: none;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .projects-overview__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .projects-overview {
+        padding: 45px 20px 65px;
+    }
+
+    .projects-overview__header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .projects-overview__title {
+        font-size: 34px;
+    }
+
+    .projects-overview__count {
+        font-size: 12px;
+    }
+
+    .projects-overview__filters {
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .projects-overview__filter {
+        padding: 7px 13px;
+    }
+
+    .projects-overview__grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .projects-overview__info {
+        min-height: 160px;
+        padding: 18px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .projects-overview__card,
+    .projects-overview__image,
+    .projects-overview__filter {
+        transition: none;
+    }
+
+}
+
 
 /* ========================================
    RESPONSIVE

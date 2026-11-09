@@ -9,6 +9,7 @@ $title_after = $data['title_after'] ?? '';
 
 $button_text = $data['button_text'] ?? '';
 $button_link = $data['button_link'] ?? '';
+$description = $data['description'] ?? '';
 
 ?>
 
@@ -35,6 +36,14 @@ $button_link = $data['button_link'] ?? '';
             <?= esc_html($title_after); ?>
 
         </h1>
+
+        <?php if ($description): ?>
+
+            <p class="about-hero__description">
+                <?= nl2br(esc_html($description)); ?>
+            </p>
+
+        <?php endif; ?>
 
         <?php if ($button_text && $button_link): ?>
 
